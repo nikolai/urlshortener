@@ -20,12 +20,11 @@ public class AccountService {
 		String password = generatorService.generateString(PASSWORD_LENGTH);
 		Account account = new Account(accountId, password);
         Account existed = registeredAccounts.putIfAbsent(accountId, account);
-		if (existed == null) {
-			return password;
-		} else {
+		if (existed != null) {
 			throw new AccountAlreadyExists(accountId);
 		}
-    }
+		return password;
+	}
 
 
 	public void check(String name, String password) throws AccountAuthException {

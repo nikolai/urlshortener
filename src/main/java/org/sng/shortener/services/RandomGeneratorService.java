@@ -18,5 +18,4 @@ public class RandomGeneratorService {
         }
         return new String(passw);
     }
-
 }
