@@ -1,7 +1,7 @@
 package org.sng.shortener.services;
 
 import org.assertj.core.api.Assertions;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class RandomGeneratorServiceTest {
     @Test
@@ -11,3 +11,4 @@ public class RandomGeneratorServiceTest {
         Assertions.assertThat(resultString).hasSize(desiredSize);
     }
 }
+
