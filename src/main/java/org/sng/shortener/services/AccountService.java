@@ -16,7 +16,14 @@ public class AccountService {
 	@Autowired
     private RandomGeneratorService generatorService;
 
-    public String register(String accountId) throws AccountAlreadyExists {
+	public AccountService() {
+	}
+
+	ConcurrentHashMap<String, Account> getRegisteredAccounts() {
+		return registeredAccounts;
+	}
+
+	public String register(String accountId) throws AccountAlreadyExists {
 		String password = generatorService.generateString(PASSWORD_LENGTH);
 		Account account = new Account(accountId, password);
         Account existed = registeredAccounts.putIfAbsent(accountId, account);
