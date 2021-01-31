@@ -13,6 +13,7 @@ public class AccountService {
 	public static final int PASSWORD_LENGTH = 8;
 	private final ConcurrentHashMap<String, Account> registeredAccounts = new ConcurrentHashMap<>();
 	@Autowired private RandomGeneratorService generatorService;
+
 	public AccountService() {
 	}
 	public AccountService(RandomGeneratorService generatorService) {
